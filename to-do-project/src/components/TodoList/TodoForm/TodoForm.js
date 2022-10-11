@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './TodoForm.css';
-
+import  "../TodoList";
 
 class TodoForm extends Component {
     render() {
@@ -12,7 +12,10 @@ class TodoForm extends Component {
                         <input
                             type='text'
                             placeholder="Add a Task..."
-                            autoComplete="off" />
+                            autoComplete="off"
+                            value={this.props.newTodo}
+                            onChange={this.props.handleChange}
+                        />
                     </div>
                 </form>
             </div>
