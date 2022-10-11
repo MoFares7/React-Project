@@ -35,6 +35,7 @@ class TodoList extends Component {
     render() {
         return (
             <div className='todo-list container d-flex-column w-50 mt-5 pb-3'>
+                <h2 className='intro'>Welcome in Our Sit</h2>
                 <TodoForm
                     todos={this.state.todos}
                     newTodo={this.state.newTodo}

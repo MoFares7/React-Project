@@ -1,5 +1,5 @@
 form {
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 input[type="text"] {
@@ -31,4 +31,9 @@ input[type="text"]:focus {
     top: 50%;
     transform: translateY(-50%);
     padding-left: 10px;
+}
+
+.intro {
+    padding-top: 20px;
+    ;
 }
