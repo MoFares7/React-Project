@@ -43,6 +43,17 @@ class TodoList extends Component {
         this.setState({ todos: todoCompleted });
     };
 
+    removeTodo = (index) => {
+
+        const { todos } = this.state;
+        todos.splice(index, 1);
+        this.setState({
+            todos,
+        });
+
+    }
+
+
     render() {
         return (
             <div className='todo-list container d-flex-column w-50 mt-5 pb-3'>
@@ -53,7 +64,10 @@ class TodoList extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
-                <TodoListItems todos={this.state.todos} handleChange={this.toggleCompleted} />
+                <TodoListItems todos={this.state.todos}
+                    handleChange={this.toggleCompleted}
+                    handleOnRemove={this.removeTodo}
+                />
             </div>
         );
     }

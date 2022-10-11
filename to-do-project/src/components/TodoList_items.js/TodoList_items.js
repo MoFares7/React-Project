@@ -31,7 +31,8 @@ function TodoListItems(props) {
                         </span>
                     </div>
                     <div>
-                        <i className="fa fa-trash" aria-hidden="true"></i>
+                        <i onClick={() => props.handleOnRemove(index)}
+                            className="fa fa-trash" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
