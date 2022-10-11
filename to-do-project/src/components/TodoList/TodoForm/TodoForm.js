@@ -6,7 +6,7 @@ class TodoForm extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.props.handleSubmit}>
                     <div className="input-icon">
                         <i className="fa fa-list-ol icon" aria-hidden="true"></i>
                         <input
