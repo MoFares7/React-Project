@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TodoForm from './TodoForm/TodoForm';
+import TodoForm from '../TodoForm/TodoForm';
+import TodoListItems from '../TodoList_items.js/TodoList_items';
 import './TodoList.css';
 
 class TodoList extends Component {
@@ -42,8 +43,10 @@ class TodoList extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
+                <TodoListItems todos={this.state.todos} />
             </div>
         );
     }
 }
+
 export default TodoList;
