@@ -10,7 +10,18 @@ function TodoListItems(props) {
         return (
             <div className="todoComponent d-flex w-75 mx-auto" key={todo.id}>
                 <div className="todoCompLeft">
-                    <input type="checkbox" />
+                    <input type="checkbox"
+                        className="checkbox-element"
+                        style={{
+                            size: 20,
+                            checkedColor: "#2e3238",
+                            uncheckedColor: "#343a40",
+                            hoverColor: "#343a40"
+                        }}
+                        onChange={(event) => props.handleOnChange(event, index)}
+                   
+                   
+                    />
                 </div>
                 <div className="todoCompRight d-flex justify-content-between flex-grow-1 px-3" >
                     <div className="todoTitle">
@@ -20,11 +31,13 @@ function TodoListItems(props) {
                         </span>
                     </div>
                     <div>
-                        <i className="fa fa-trash" aria-hidden="true"></i>
+                        <i onClick={() => props.handleOnRemove(index)}
+                            className="fa fa-trash" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
         )
+
     })
 
 

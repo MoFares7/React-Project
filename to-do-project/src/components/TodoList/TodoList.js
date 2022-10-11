@@ -25,13 +25,34 @@ class TodoList extends Component {
             todos: [
                 ...this.state.todos,
                 {
-                    id: todoLength,
+                    id: (todoLength += 1),
                     title: this.state.newTodo,
                     isCompleted: false
                 }
             ]
         });
     }
+
+    toggleCompleted = (event, index) => {
+        const todoCompleted = this.state.todos.filter((todo) => {
+            if (todo.id === index + 1) {
+                todo.isCompleted = event.target.checked;
+            }
+            return todo;
+        });
+        this.setState({ todos: todoCompleted });
+    };
+
+    removeTodo = (index) => {
+
+        const { todos } = this.state;
+        todos.splice(index, 1);
+        this.setState({
+            todos,
+        });
+
+    }
+
 
     render() {
         return (
@@ -43,7 +64,10 @@ class TodoList extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
-                <TodoListItems todos={this.state.todos} />
+                <TodoListItems todos={this.state.todos}
+                    handleChange={this.toggleCompleted}
+                    handleOnRemove={this.removeTodo}
+                />
             </div>
         );
     }
