@@ -78,6 +78,7 @@ class TodoList extends Component {
                 <TodoListItems todos={this.state.todos}
                     handleChange={this.toggleCompleted}
                     handleOnRemove={this.removeTodo}
+                    handleOnEdit={this.editTodo}
                 />
             </div>
         );

@@ -24,6 +24,8 @@ hr {
 .fa-pencil {
     color: #8e8e8e;
     cursor: pointer;
+    padding-right: 10px;
+    text-overflow: ellipsis;
 }
 
 .fa-thumb-tack {
@@ -33,6 +35,5 @@ hr {
 }
 
 .hr {
-
     width: 100%;
 }
