@@ -44,12 +44,23 @@ class TodoList extends Component {
     };
 
     removeTodo = (index) => {
-
         const { todos } = this.state;
         todos.splice(index, 1);
         this.setState({
             todos,
         });
+    };
+
+    editTodo = (index) => {
+        const newTodo = prompt('Let\'s make something changes');
+        const { todos } = this.state;
+        todos.filter(todo => {
+            if (todo.id === index + 1) {
+                todo.title = newTodo;
+            }
+            return todo;
+        });
+        this.setState({ todos });
 
     }
 
