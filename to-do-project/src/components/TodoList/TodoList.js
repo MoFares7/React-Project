@@ -18,19 +18,27 @@ class TodoList extends Component {
     handleSubmit = event => {
         //! this to prevent refresh page when add task
         event.preventDefault();
-
-        let todoLength = this.state.todos.length
-        this.setState({
-            newTodo: '',
-            todos: [
-                ...this.state.todos,
-                {
-                    id: (todoLength += 1),
-                    title: this.state.newTodo,
-                    isCompleted: false
-                }
-            ]
-        });
+         
+        //? check if newTodo is empty or not
+        if (this.state.newTodo === "") {
+            return
+        }
+        else {
+            
+        
+            let todoLength = this.state.todos.length
+            this.setState({
+                newTodo: '',
+                todos: [
+                    ...this.state.todos,
+                    {
+                        id: (todoLength += 1),
+                        title: this.state.newTodo,
+                        isCompleted: false
+                    }
+                ]
+            });
+        }
     }
 
     toggleCompleted = (event, index) => {
