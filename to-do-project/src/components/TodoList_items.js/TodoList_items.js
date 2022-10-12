@@ -19,8 +19,8 @@ function TodoListItems(props) {
                             hoverColor: "#343a40"
                         }}
                         onChange={(event) => props.handleOnChange(event, index)}
-                   
-                   
+
+
                     />
                 </div>
                 <div className="todoCompRight d-flex justify-content-between flex-grow-1 px-3" >
@@ -31,6 +31,11 @@ function TodoListItems(props) {
                         </span>
                     </div>
                     <div>
+                        <i
+                            className="fa fa-pencil mr-3"
+                            aria-hidden="true"
+                            onClick={() => props.handleOnEdit(index)}
+                        ></i>
                         <i onClick={() => props.handleOnRemove(index)}
                             className="fa fa-trash" aria-hidden="true"></i>
                     </div>
